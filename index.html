@@ -299,26 +299,23 @@
   <div class="project-label" style="display:flex;align-items:center;gap:.4rem">
     DSA & Memory Education Tool
   </div>
-
   <h3>JavaMem — Java Memory Visualizer</h3>
-
   <div class="project-inner">
     <div>
       <p class="project-desc">
-        Live, interactive diagram that shows exactly how Java manages memory as you type code.
+        Most Java memory tools show you a diagram. I found that most of them — including textbooks — quietly teach wrong mental models. So I diagnosed 8 specific misconceptions, then built a visualizer that corrects each one through how it renders, not through a tooltip or a footnote.
       </p>
-
       <ul class="exp-highlights" style="margin:0">
-        <li>Visualizes <strong>Stack, Heap & String Pool</strong> in real time</li>
-        <li>Supports <strong>8+ data structures</strong> — LinkedList, BST, ArrayList, HashMap, Stack, HashSet & more</li>
-        <li>Live <strong>Add / Remove controls</strong> — no code re-run required</li>
-        <li><strong>Canvas-rendered BST</strong> with in-order traversal display</li>
-        <li>Simulates <strong>String interning, Integer cache & GC animations</strong></li>
-        <li>Animated reference arrows connecting stack → heap objects</li>
-        <li>Zero-dependency, single-file application — runs in any browser</li>
+        <li>Each structure rendered to reflect <strong>true memory behavior</strong> — ArrayList as contiguous cells, LinkedList as scattered individual node objects, Stack as a LIFO tower</li>
+        <li><strong>HashMap</strong> displays entries by hash bucket index with an explicit "order not guaranteed" warning</li>
+        <li><strong>Two-phase GC</strong> — objects become GC-eligible first, collected after a random delay, reflecting non-deterministic collection</li>
+        <li>Visualizes <strong>Stack, Heap & String Pool</strong> in real time with animated reference arrows</li>
+        <li>Supports <strong>8+ data structures</strong> with live Add / Remove controls — no re-run required</li>
+        <li><strong>Canvas-rendered BST</strong> with dynamic layout and in-order traversal display</li>
+        <li>Simulates <strong>String interning & Integer cache</strong> — including the <code>==</code> trap above 127</li>
+        <li>Zero-dependency, single-file — runs in any browser</li>
       </ul>
     </div>
-
     <!-- Project Preview Image -->
     <div style="border-radius:7px;overflow:hidden;border:1px solid var(--border);position:relative;aspect-ratio:4/3;background:var(--bg-alt)">
       <img src="JavaMem.png"
@@ -328,7 +325,6 @@
       <div style="position:absolute;bottom:0;left:0;right:0;height:25px;background:linear-gradient(transparent,var(--bg-card));pointer-events:none"></div>
     </div>
   </div>
-
   <div class="project-tech" style="margin-top:.6rem">
     <span class="tech-tag">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="">HTML
@@ -349,7 +345,6 @@
       DSA
     </span>
   </div>
-
   <div class="project-links">
     <a href="https://neeraj281998.github.io/JavaMem-Java-Memory-Visualizer/" target="_blank">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -366,7 +361,6 @@
     </a>
   </div>
 </div>
-
     
  <div class="project-card">
   <div class="project-label" style="display:flex;align-items:center;gap:.4rem">
@@ -621,6 +615,7 @@ document.querySelector('.terminal-wrapper').addEventListener('click',()=>tI.focu
 </body>
 
 </html>
+
 
 
 
