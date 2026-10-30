@@ -953,11 +953,11 @@
       <div class="terminal-line"><span class="comment"># Type 'help' to see commands</span></div>
       <div class="terminal-line"><span class="prompt">~ $</span> <span class="cmd">whoami</span></div>
       <div class="terminal-line"><span class="output">Neeraj Prasad — SWE | Dublin</span></div>
-      <div class="terminal-line"><span class="highlight">2yr Backend + 1yr AI | Java, Python, AWS</span></div>
+      <div class="terminal-line"><span class="highlight">2yr Backend + 1yr AI | Java, Python, AWS, LLM agents</span></div>
       <div class="terminal-line"><span class="success">✓ Seeking SWE roles</span></div>
     </div>
     <div class="terminal-input-line"><span class="prompt">~ $</span><input type="text" id="terminalInput" placeholder="Type a command..." autocomplete="off" spellcheck="false"></div>
-    <div class="terminal-hint"><code>help</code><code>skills</code><code>experience</code><code>projects</code><code>contact</code><code>sudo hire me</code></div>
+    <div class="terminal-hint"><code>help</code><code>skills</code><code>experience</code><code>projects</code><code>paystruct</code><code>contact</code><code>sudo hire me</code></div>
   </div>
 </div></section>
 
@@ -970,15 +970,16 @@ let lastY=0;const nav=document.querySelector('nav');
 window.addEventListener('scroll',()=>{const y=window.scrollY;nav.style.transform=y>lastY&&y>80?'translateY(-100%)':'translateY(0)';lastY=y});
 const tB=document.getElementById('terminalBody'),tI=document.getElementById('terminalInput');
 const cmds={
-help:()=>[{type:'highlight',text:'Commands: whoami · skills · experience · projects · education · contact · ai-tools · sudo hire me · clear'}],
-whoami:()=>[{type:'highlight',text:'👨‍💻 Neeraj Prasad'},{type:'output',text:'SWE | Dublin | 2yr Backend + 1yr AI Research'},{type:'success',text:'✓ Seeking full-time SWE roles'}],
-skills:()=>[{type:'highlight',text:'⚙️ Spring Boot, FastAPI, Microservices, REST, OAuth2'},{type:'highlight',text:'☁️ AWS, Docker, K8s, CI/CD'},{type:'highlight',text:'💻 Java, Python, JS, MySQL, MongoDB, Redis'},{type:'highlight',text:'🧠 TensorFlow, Keras, GANs'}],
+help:()=>[{type:'highlight',text:'Commands: whoami · skills · experience · projects · paystruct · education · contact · ai-tools · sudo hire me · clear'}],
+whoami:()=>[{type:'highlight',text:'👨‍💻 Neeraj Prasad'},{type:'output',text:'SWE | Dublin | 2yr Backend + 1yr AI Research'},{type:'output',text:'Java, Python, AWS, LLM agents'},{type:'success',text:'✓ Seeking full-time SWE roles'}],
+skills:()=>[{type:'highlight',text:'⚙️ Spring Boot, FastAPI, Microservices, REST, OAuth2, Event-Driven'},{type:'highlight',text:'☁️ AWS, Docker, K8s, CI/CD, GitHub Actions'},{type:'highlight',text:'💻 Java, Python, JS, PostgreSQL, MySQL, MongoDB, Redis'},{type:'highlight',text:'🧠 Claude API, LLM Agents, Tool Use, LLM Evals, Guardrails'},{type:'highlight',text:'🧠 TensorFlow, Keras, GANs'},{type:'highlight',text:'🧪 pytest, Hypothesis, JUnit 5, Testcontainers, ISO 20022'}],
 experience:()=>[{type:'accent',text:'┌ MSc Thesis — DCU (2024-25) → DCGAN/CGAN, 15% efficiency gain'},{type:'accent',text:'├ SWE — AlignBits (2023-24) → 10+ microservices, 25% throughput'},{type:'accent',text:'└ Intern — AlignBits (2023) → 20% faster APIs'}],
-projects:()=>[{type:'accent',text:'📧 SmartMail Sync — FastAPI + Gmail/Drive + MySQL'},{type:'accent',text:'📸 Pexeluxe — AWS S3+Lambda+CloudFront (live!)'},{type:'output',text:'   d23oj82a8a9j68.cloudfront.net'},{type:'accent',text:'🧠 JavaMem — Java Memory Visualizer (live!)'}, {type:'output',text:' neeraj281998.github.io/JavaMem-Java-Memory-Visualizer/'}],
+projects:()=>[{type:'accent',text:'🛡️ PayStruct — rules-first AI repair for ISO 20022 addresses'},{type:'output',text:'   0.22% false repairs vs 3.4% LLM-only (synthetic data)'},{type:'output',text:'   github.com/Neeraj281998/Paystruct'},{type:'accent',text:'🔍 QuerySense — Postgres query optimizer (rules + Claude)'},{type:'output',text:'   neeraj281998.github.io/Querysense/'},{type:'accent',text:'📧 SmartMail Sync — FastAPI + Gmail/Drive + MySQL'},{type:'accent',text:'📸 Pexeluxe — AWS S3+Lambda+CloudFront (live!)'},{type:'output',text:'   d23oj82a8a9j68.cloudfront.net'},{type:'accent',text:'🧠 JavaMem — Java Memory Visualizer (live!)'},{type:'output',text:'   neeraj281998.github.io/JavaMem-Java-Memory-Visualizer/'}],
+paystruct:()=>[{type:'accent',text:'🛡️ PayStruct — the AI proposes, plain code decides'},{type:'output',text:'Free-text payment addresses → structured ISO 20022 fields'},{type:'highlight',text:'1. Python rules engine first (8 countries, evidence per field)'},{type:'highlight',text:'2. Claude agent only for what rules cannot resolve'},{type:'highlight',text:'3. Verifier gates publishing: validation, grounding, completeness'},{type:'success',text:'✓ 1,000 held-out addresses: false repairs 0.22% (2/892)'},{type:'output',text:'  vs 3.4% (34/996) for LLM-only, about 1/40 of the cost'},{type:'output',text:'Honest limits: synthetic data, agent adds a safety gate not accuracy'},{type:'output',text:'github.com/Neeraj281998/Paystruct'}],
 education:()=>[{type:'highlight',text:'🎓 MSc AI — DCU (2024-25)'},{type:'highlight',text:'🎓 MCA Distinction — SIOM Pune (2020-22)'},{type:'highlight',text:'🎓 BCA — MMCC Pune (2017-20)'}],
 contact:()=>[{type:'highlight',text:'📧 prasadneeraj2898@gmail.com'},{type:'highlight',text:'🔗 linkedin.com/in/neeraj-prasad2898'},{type:'highlight',text:'🐙 github.com/Neeraj281998'}],
-'ai-tools':()=>[{type:'accent',text:'Claude · ChatGPT → Architecture, debugging, review'},{type:'accent',text:'Copilot · Cursor → Autocomplete, test gen'},{type:'accent',text:'AI Studio → Research, screen share learning'}],
-'sudo hire me':()=>[{type:'success',text:'🎉 Deploying Neeraj...'},{type:'output',text:'  ███████████████████████████ 100%'},{type:'success',text:'✓ Backend skills loaded'},{type:'success',text:'✓ Cloud architecture ready'},{type:'highlight',text:'→ prasadneeraj2898@gmail.com'}]
+'ai-tools':()=>[{type:'accent',text:'Claude · Claude Code · ChatGPT → Architecture, debugging, review'},{type:'accent',text:'Copilot · Cursor → Autocomplete, test gen'},{type:'accent',text:'AI Studio → Research, screen share learning'}],
+'sudo hire me':()=>[{type:'success',text:'🎉 Deploying Neeraj...'},{type:'output',text:'  ███████████████████████████ 100%'},{type:'success',text:'✓ Backend skills loaded'},{type:'success',text:'✓ Cloud architecture ready'},{type:'success',text:'✓ LLM agents + guardrails ready'},{type:'highlight',text:'→ prasadneeraj2898@gmail.com'}]
 };
 tI.addEventListener('keydown',e=>{if(e.key!=='Enter')return;const c=tI.value.trim().toLowerCase();tI.value='';if(!c)return;
 const echo=document.createElement('div');echo.className='terminal-line';echo.innerHTML=`<span class="prompt">~ $</span> <span class="cmd">${c}</span>`;tB.appendChild(echo);
